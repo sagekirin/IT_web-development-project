@@ -10,8 +10,30 @@ header{
 }
 .navbar{
     /* Setting up navigation bar */
-    background-color: black;
+    background-color: blue;
     height: 50px;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: blue;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        border-right: 1px solid white;
+      }
+      li a:hover {
+        background-color: navy;
+      }
 }
 
 /* Sets the aside and section elements to be side-by-side */

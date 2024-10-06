@@ -2,12 +2,6 @@
     /* Selecting all elements and factoring in padding when calculating width */
     box-sizing: border-box;
 }
-header{
-    /* editing the header style */
-    background-color: navy;
-    text-align: center;
-    padding: 25px;
-}
 .navbar{
     /* Setting up navigation bar */
     background-color: blue;
@@ -36,6 +30,12 @@ header{
       }
 }
 
+header{
+    /* editing the header style */
+    background-color: navy;
+    text-align: center;
+    padding: 25px;
+}
 /* Sets the aside and section elements to be side-by-side */
 aside{
     width: 30%;
@@ -43,7 +43,12 @@ aside{
     padding: 10px;
 }
 section{
-    width: 70%;
+    width: 60%;
+    float: left;
+    padding: 10px;
+}
+article{
+    width: 10%;
     float: left;
     padding: 10px;
 }
@@ -55,9 +60,12 @@ footer{
     text-align: center;
     padding: 15px;
 }
+
 /* Elements will stack on-top of one-another if a mobile device is detected */
 @media screen and (max-width:600px){
     aside, section{
         width: 100%
     }
 }
+/* importing CDN bootstrap icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");

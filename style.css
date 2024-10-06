@@ -1,0 +1,41 @@
+*{
+    /* Selecting all elements and factoring in padding when calculating width */
+    box-sizing: border-box;
+}
+header{
+    /* editing the header style */
+    background-color: navy;
+    text-align: center;
+    padding: 25px;
+}
+.navbar{
+    /* Setting up navigation bar */
+    background-color: black;
+    height: 50px;
+}
+
+/* Sets the aside and section elements to be side-by-side */
+aside{
+    width: 20%;
+    float: left;
+    padding: 10px;
+}
+section{
+    width: 80%;
+    float: left;
+    padding: 10px;
+}
+footer{
+    display: block;
+    clear: both;
+    /* editing the footer style */
+    background-color: navy;
+    text-align: center;
+    padding: 15px;
+}
+/* Elements will stack on-top of one-another if a mobile device is detected */
+@media screen and (max-width:600px){
+    aside, section{
+        width: 100%
+    }
+}

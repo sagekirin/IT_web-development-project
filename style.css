@@ -4,57 +4,31 @@
 }
 /* create a color palette for the website, so that we don't need to manually input values */
 :root{
-    --base-color: #1230AE;
-    --base-variant: #6983e9;
-    --text-color: #ffffff;
-    --secondary-text: #808080;
-    --primary-color: #6C48C5;
-    --secondary-color: #C68FE6;
-    --accent-color: #FFF7F7;
+    --base-color: #3c0570;
+    --base-variant: #6024eb80;      /*Last two #'s determine transparency*/
+    --text-color:white;
+    --secondary-text:white;
+    --primary-color: #bb89de;
+    --secondary-color: #20bee3;
+    --accent-color: #c9c1e6;
 }
 
-/* Create a new class and copy earlier colors to their Darker versions */
-.darkmode{
-    --base-color: #081752;
-    --base-variant: #1b2b6b;
-    --text-color: #ccc;
-    --secondary-text: #1a1a1a;
-    --primary-color: #191031;
-    --secondary-color: #270c37;
-    --accent-color: #FFF7F7;
-}
-#theme-switch{
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--base-variant);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-/* Changing icon colors */
-#theme-switch svg{
-    fill: var(--primary-color);
-}
-/* Only show icon depending on which mode */
-#theme-switch svg:last-child{
-    display: none;
+/* Make the BG black, set GIF as the BG image */
+body{
+    background-color: black;
+    background-image:url('Assets/pixel_Stars.gif');    /* Pulling a gif as the BG image */
+    background-size:100%;                          /* Size up so it's not so itty-bitty */
+    background-repeat: repeat-y;                   /* Image stays in place & doesn't follow */
+    background-attachment: fixed;
+
+    height:100%;
+    width:100%;
 }
 
-.darkmode #theme-switch svg:first-child{
-    display: none;
-}
-.darkmode #theme-switch svg:last-child{
-    display: block;
-}
 .navbar{
     /* Setting up navigation bar */
     background-color: var(--base-color);
-    height: 50px;
+    height: 35px;
 
     ul {
         list-style-type: none;
@@ -62,31 +36,57 @@
         padding: 0;
         overflow: hidden;
         background-color: var(--base-color);
-      }
-      li {
+    }
+
+    li {
         float: left;
-      }
-      li a {
+        border-right: 1px solid white;      /* Black right border seperating options */
+    }
+    li:last-child {
+        border-right: none;                   /* Makes sure the end option doesn't have a line */
+    }
+
+    li a {
         display: block;
         color: var(--text-color);
         text-align: center;
-        padding: 14px 16px;
+        padding: 14px 16px;     /* Changes padding around element */
         text-decoration: none;
-        border-right: 1px solid black;
-      }
-      li a:hover {
-        background-color: navy;
-      }
+        border-right: 1px solid var(--base-color);
+    }
+
+    /*Change color on hover*/
+    li a:hover {
+        background-color: var(--base-variant);
+    }
+    
+    /* Active class so surfers can see what page they're on */
+    .active {
+        background-color: var(--base-variant);
+    }
 }
+/* Class to make images responsive */
+.responsive{
+    max-width: 100%;
+    height: auto;
+}
+/* Class for responsive boxes */
+.funky_box{
+    background-color: var(--base-variant);
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px 50px;   /* Round corners :3 */
+}
+
 header{
     /* editing the header style */
-    background-color: var(--base-color);
     text-align: center;
     padding: 25px;
 }
-/* Sets the aside and section elements to be side-by-side */
+/* Area for basic section sizes*/
 aside{
-    width: 30%;
+    width: 25%;
     float: left;
     padding: 10px;
 }
@@ -96,17 +96,9 @@ section{
     padding: 10px;
 }
 article{
-    width: 10%;
+    width: 15%;
     float: left;
     padding: 10px;
-}
-footer{
-    display: block;
-    clear: both;
-    /* editing the footer style */
-    background-color: var(--base-color);
-    text-align: center;
-    padding: 15px;
 }
 
 
@@ -115,4 +107,13 @@ footer{
     aside, section{
         width: 100%
     }
+}
+
+/* Control the overall size of the page */
+#wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+#heading-container{
+    background-image:url('Assets/Header_Wallpaper.png')
 }

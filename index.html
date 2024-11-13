@@ -8,56 +8,119 @@
             <title>Kuro's Home</title>
             <link rel="stylesheet" href="style.css">
             <script type="text/javascript" src="script.js" defer></script>
+
+            <!-- Creating styles for different elements -->
+            <style>
+                .cd_player {
+                    position: relative;
+                }
+                .cd_player ul {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0px;
+                }
+                .cd_player:hover ul, .activate:focus + ul, .cd_player:focus-within > ul {
+                    display: inline-block;
+                }
+            </style>
+            <script>
+                function stopmusic() {
+                    var y = document.getElementsByTagName('audio');
+                    for(var j=0; j<y.length; j++) {
+                        y[j].pause();
+                    }
+                }
+                function playsong() {
+                    var y = document.getElementsByTagName('audio');
+                    for(var j=0; j<y.length; j++) {
+                        y[j].pause();
+                    }
+                    var songvalue = event.target.value;
+                    document.getElementsByTagName('audio')[songvalue].currentTime = 0;
+                    document.getElementsByTagName('audio')[songvalue].play();
+                }
+            </script>
         </head>
 
-        <body> 
-            <!-- Main content of page -->
-            <header>
-                <button id="theme-switch">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
-                        <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
-                        <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
-                        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
-                    </svg>
-                </button>
-
-               <h1>Kuro's Home</h1> <!-- Title -->
-               <h2><i>An HTML Playground and Blog</i></h2> <!-- site description --> 
-            </header>
-            
-            <nav class="navbar">
-                <!-- Hyperlinks to the contact and about pages. Target has them open in a new tab -->
+        <body>
+            <div id="wrapper">
+                <div id="heading-container">
+                    <header>
+                        <h1>Kuro's Home</h1> <!-- Title --> 
+                    </header>
+                </div>
+           
+                <nav class="navbar">
+                <!-- Hyperlinks to different pages. Target has them open in a new tab -->
                  <ul>
-                    <li><a href="about_me.html" target="blank">Who am I?</a></li>
-                    <li><a href="contact.html" target="blank">Say Hello!</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about_me.html">About Page</a></li>
+                    <li><a href="contact.html">Say Hello!</a></li>
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="archive.html">The Archive</a></li>
                  </ul>
-            </nav>
-
-
-            <main>
-                <!-- Creates a section to the side for the photo to be placed -->
-                <aside> 
-                    <!-- Random placeholer image generated by picsum.photos-->
-                    <img src="https://picsum.photos/250/250"> 
-                </aside>
-                <!-- Main section of the page -->
-                <section> 
-                    <p>
-                        Hello, welcome to my website!<br> <!-- line break tag -->
-                        Feel free to look around, and check out the about me and contact pages.<br>
-                        I'm always happy to talk ^^
-                    </p>
-                </section>
-            </main>
-
-            <footer>
-                <h2>
-                    <a href="https://genrandom.com/cats/">Here's a site that randomly generates cat pictures!</a>
-                </h2>
-            </footer>
+                </nav>
             
+                <!-- Creates a section to the left side -->
+                <aside>
+                    <div id="sidebar" class="funky_box">
+                        <img src="Assets/Space_3.gif" class="responsive">
+                        <p>You've come a long way, haven't you...</p> 
+
+                         <!-- Music Player, tutorial from Solaria on Neocities -->
+                         <!-- TODO: Replace songs, find better image -->
+                        <div class="cd_player">
+                            <button class="activate"><img src="Assets/Music_Icon.png" class="responsive"></button>
+                             <ul>
+                              <button onclick="stopmusic()" >stop music</button>
+                              
+                              <li><button value="0" onclick="playsong()">crumblin_down.mp3	
+                                <audio ><source src="https://media-upload.net/uploads/5S9FeDnNyrOE.mp3" type="audio/mp3"></audio>
+                              </button></li>
+                              <li><button value="1" onclick="playsong()">dragula.mp3
+                                <audio ><source src="https://media-upload.net/uploads/e6gThUtmqE2z.mp3" type="audio/mp3"></audio>
+                              </button></li>
+                              <li><button value="2" onclick="playsong()">have_you_ever_seen_the_rain.mp3
+                                <audio ><source src="https://media-upload.net/uploads/gTKMVftE8oCu.mp3" type="audio/mp3"></audio>
+                              </button></li>
+                              <li><button value="3" onclick="playsong()">i_hate_myself_for_loving_you.mp3
+                                <audio><source src="https://media-upload.net/uploads/TRNy3ljbSKXa.mp3" type="audio/mp3"></audio>
+                              </button></li>
+                              <li><button value="4" onclick="playsong()">i_would_walk_500_miles.mp3
+                                <audio><source src="https://media-upload.net/uploads/KGSmbhNQCsfF.mp3" type="audio/mp3"></audio>
+                              </button></li>
+                             </ul>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <!-- Scuffed guestbook -->
+                        <form action="/submit-form" method="post">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" required>
+                            <button type="submit">Submit</button>
+                        </form>
+                    <!-- TODO: Gintoki jail, better guestbook -->
+                    </div>
+                </aside>
+
+                <!-- Middle section of the page -->
+                <section>
+                    <div id="main_box" class="funky_box">
+                        <p>
+                            Hello, welcome to my website!<br> <!-- line break tag -->
+                            Feel free to look around, and check out the about me and contact pages.<br>
+                            I'm always happy to talk ^^
+
+                            While you're here, I want it to feel like you're crusing through the galaxy.
+                            Chill, sit down, and have fun with the media player for a while. There's also a pet and a guestbook, if you wanna sign those as well.
+                        </p>              
+                    </div>
+                </section>
+            
+            </div>
         </body>
 
     </html>

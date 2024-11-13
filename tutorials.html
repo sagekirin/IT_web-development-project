@@ -1,0 +1,120 @@
+<doctype html>
+   <html lang="en-US">
+       <head>
+         <meta charset="utf-8" />    <!-- Character set to utf-8 -->
+         <!-- Page will render at the width of the viewport, mobile friendly -->
+         <meta name="viewport" content="width=device-width, inital-scale=1" />
+         <title>Kuro's Home</title>
+         <link rel="stylesheet" href="style.css">
+         <script type="text/javascript" src="script.js" defer></script>
+
+         <!-- Creating styles for different elements -->
+         <style>
+             .cd_player {
+                 position: relative;
+             }
+             .cd_player ul {
+                 display: none;
+                 position: absolute;
+                 top: 100%;
+                 left: 0px;
+             }
+             .cd_player:hover ul, .activate:focus + ul, .cd_player:focus-within > ul {
+                 display: inline-block;
+             }
+         </style>
+         <script>
+             function stopmusic() {
+                 var y = document.getElementsByTagName('audio');
+                 for(var j=0; j<y.length; j++) {
+                     y[j].pause();
+                 }
+             }
+             function playsong() {
+                 var y = document.getElementsByTagName('audio');
+                 for(var j=0; j<y.length; j++) {
+                     y[j].pause();
+                 }
+                 var songvalue = event.target.value;
+                 document.getElementsByTagName('audio')[songvalue].currentTime = 0;
+                 document.getElementsByTagName('audio')[songvalue].play();
+             }
+         </script>
+       </head>
+
+       <body>
+           <div id="wrapper">
+               <div id="heading-container">
+                   <header>
+                       <h1>Kuro's Blog</h1> <!-- Title --> 
+                   </header>
+               </div>
+          
+               <nav class="navbar">
+               <!-- Hyperlinks to different pages -->
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="about_me.html">About Page</a></li>
+                   <li><a href="contact.html">Say Hello!</a></li>
+                   <li><a href="tutorials.html">Tutorials</a></li>
+                   <li><a href="archive.html">The Archive</a></li>
+                </ul>
+               </nav>
+           
+               <!-- Creates a section to the left side -->
+               <aside>
+                   <div id="sidebar" class="funky_box">
+                       <img src="Assets/Space_3.gif" class="responsive">
+                       <p>You've come a long way, haven't you...</p> 
+
+                        <!-- Music Player, tutorial from Solaria on Neocities -->
+                        <!-- TODO: Replace songs, find better image -->
+                       <div class="cd_player">
+                           <button class="activate"><img src="Assets/Music_Icon.png" class="responsive"></button>
+                            <ul>
+                             <button onclick="stopmusic()" >stop music</button>
+                             
+                             <li><button value="0" onclick="playsong()">crumblin_down.mp3	
+                               <audio ><source src="https://media-upload.net/uploads/5S9FeDnNyrOE.mp3" type="audio/mp3"></audio>
+                             </button></li>
+                             <li><button value="1" onclick="playsong()">dragula.mp3
+                               <audio ><source src="https://media-upload.net/uploads/e6gThUtmqE2z.mp3" type="audio/mp3"></audio>
+                             </button></li>
+                             <li><button value="2" onclick="playsong()">have_you_ever_seen_the_rain.mp3
+                               <audio ><source src="https://media-upload.net/uploads/gTKMVftE8oCu.mp3" type="audio/mp3"></audio>
+                             </button></li>
+                             <li><button value="3" onclick="playsong()">i_hate_myself_for_loving_you.mp3
+                               <audio><source src="https://media-upload.net/uploads/TRNy3ljbSKXa.mp3" type="audio/mp3"></audio>
+                             </button></li>
+                             <li><button value="4" onclick="playsong()">i_would_walk_500_miles.mp3
+                               <audio><source src="https://media-upload.net/uploads/KGSmbhNQCsfF.mp3" type="audio/mp3"></audio>
+                             </button></li>
+                            </ul>
+                       </div>
+
+                       <br>
+                       <br>
+
+                       <!-- Scuffed guestbook -->
+                       <form action="/submit-form" method="post">
+                           <label for="username">Username:</label>
+                           <input type="text" id="username" required>
+                           <button type="submit">Submit</button>
+                       </form>
+                   <!-- TODO: Gintoki jail -->
+                   </div>
+               </aside>
+
+               <!-- Middle section of the page -->
+               <section>
+                   <div id="main_box" class="funky_box">
+                       <p> 
+                           There's nothing here yet...
+                       </p>            
+                   </div>
+               </section>
+           </div>
+       </body>
+
+   </html>
+</doctype>

@@ -70,13 +70,32 @@ body{
     max-width: 100%;
     height: auto;
 }
-/* Class for responsive boxes */
-.funky_box{
+
+/* Classes for responsive box types */
+.two_round_box{
     background-color: var(--base-variant);
     border: 2px solid white;
     padding: 10px;
     margin: 10px;
     border-radius: 15px 50px;   /* Round corners :3 */
+}
+.round_box{
+    background-color: var(--base-variant);
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;   /* Round corners :3 */
+}
+
+/*Little Buddy Section*/
+.pet{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;     /*Makes him a circle*/
+    position: absolute;     /*Positions the pet relative to page; can move with top, right, etc properties or transform*/
+    transition: transform 2s ease-out;    /*takes 2 seconds to move fast, then slow as it finishes anim*/
+    cursor: pointer;        /*Changes to a hand when you hover over him*/
 }
 
 header{
@@ -105,7 +124,7 @@ article{
 /* Elements will stack on-top of one-another if a mobile device is detected */
 @media screen and (max-width:600px){
     aside, section{
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -115,5 +134,6 @@ article{
     margin: 0 auto;
 }
 #heading-container{
-    background-image:url('Assets/Header_Wallpaper.png')
+    background-image:url('Assets/Header_Wallpaper.png');
+    background-size: 100%;
 }

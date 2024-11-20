@@ -44,10 +44,11 @@
         </head>
 
         <body>
+            <div class="pet" id="pet"></div>
             <div id="wrapper">
                 <div id="heading-container">
                     <header>
-                        <h1>Kuro's Home</h1> <!-- Title --> 
+                        <h1>Kuro's Blog</h1> <!-- Title --> 
                     </header>
                 </div>
            
@@ -64,12 +65,14 @@
             
                 <!-- Creates a section to the left side -->
                 <aside>
-                    <div id="sidebar" class="funky_box">
-                        <img src="Assets/Space_3.gif" class="responsive">
-                        <p>You've come a long way, haven't you...</p> 
-
-                         <!-- Music Player, tutorial from Solaria on Neocities -->
-                         <!-- TODO: Replace songs, find better image -->
+                    <div id="Greetings_Traveller" class="round_box">
+                        <img src="Assets/oh_man.png" class="responsive">
+                        <p>Hey, how'd you get here??</p> 
+                    </div>
+                    <br>
+                    <!-- Music Player, tutorial from Solaria on Neocities -->
+                    <!-- TODO: Replace songs, find better image -->
+                    <div id="Musicbox">
                         <div class="cd_player">
                             <button class="activate"><img src="Assets/Music_Icon.png" class="responsive"></button>
                              <ul>
@@ -92,23 +95,26 @@
                               </button></li>
                              </ul>
                         </div>
-
-                        <br>
-                        <br>
-
-                        <!-- Scuffed guestbook -->
-                        <form action="/submit-form" method="post">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" required>
-                            <button type="submit">Submit</button>
-                        </form>
-                    <!-- TODO: Gintoki jail, better guestbook -->
                     </div>
+                    <br>
+                    <!-- Scuffed guestbook -->      
+                    <div id="Guestbook" class="two_round_box">
+                        <form action="/submit-form" method="post">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name ="name" required>
+                            <button type="submit">Sign Guestbook</button>
+                        </form>                        
+                    </div>
+                    <!-- TODO: Gintoki sprites, better guestbook -->
                 </aside>
 
                 <!-- Middle section of the page -->
                 <section>
-                    <div id="main_box" class="funky_box">
+                    <div id="mainbox_header" class="round_box">
+                        <img src="Assets/mid_header.gif" class="responsive">
+                    </div>
+                    <div id="main_box" class="two_round_box">
+                        <h1>Welcome!</h1>
                         <p>
                             Hello, welcome to my website!<br> <!-- line break tag -->
                             Feel free to look around, and check out the about me and contact pages.<br>
@@ -116,7 +122,10 @@
 
                             While you're here, I want it to feel like you're crusing through the galaxy.
                             Chill, sit down, and have fun with the media player for a while. There's also a pet and a guestbook, if you wanna sign those as well.
-                        </p>              
+                        </p>
+                        <h1>Blog Posts:</h1>
+                        <p>Nothing here yet...check back later!</p>
+                        <!-- Blog Posts Here -->              
                     </div>
                 </section>
             
